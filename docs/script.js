@@ -485,3 +485,9 @@ function deletePost(id){
 if(getCurrentUser()){
     showApp();
 }
+fetch('https://vibebloge.onrender.com/api/projects')
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((err) => console.log(err));
