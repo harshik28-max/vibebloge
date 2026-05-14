@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VibeBlog</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <!-- AUTH -->
+    <section class="auth-screen" id="authScreen">
+
+        <div class="landing-page">
+
+            <div class="auth-container">
+
+                <div class="auth-box">
+
+                    <div class="brand">
+                        <h1>VibeBlog</h1>
+                        <p>Share your thoughts with the world 🌍</p>
+                    </div>
+
+                    <div class="tabs">
+                        <button class="tab active" id="loginTab">
+                            Login
+                        </button>
+
+                        <button class="tab" id="registerTab">
+                            Register
+                        </button>
+                    </div>
+
+                    <!-- LOGIN -->
+                    <form id="loginForm">
+
+                        <input type="email" id="loginEmail" placeholder="Enter email" required>
+
+                        <input type="password" id="loginPassword" placeholder="Enter password" required>
+
+                        <button class="main-btn" type="submit">
+                            Login
+                        </button>
+
+                    </form>
+
+                    <!-- REGISTER -->
+                    <form id="registerForm" class="hidden">
+
+                        <input type="text" id="registerUsername" placeholder="Username" required>
+
+                        <input type="email" id="registerEmail" placeholder="Email" required>
+
+                        <input type="password" id="registerPassword" placeholder="Password" required>
+
+                        <button class="main-btn" type="submit">
+                            Create Account
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HOME APP -->
+    <section class="app hidden" id="app">
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>VibeBlog</h2>
+            </div>
+
+            <nav>
+
+                <button class="nav-btn active">
+                    <i data-feather="home"></i>
+                    Home
+                </button>
+
+                <button class="nav-btn" id="openPostModal">
+                    <i data-feather="plus-square"></i>
+                    Create
+                </button>
+
+                <button class="nav-btn" id="profileBtn">
+                    <i data-feather="user"></i>
+                    Profile
+                </button>
+
+                <button class="nav-btn logout-btn" id="logoutBtn">
+                    <i data-feather="log-out"></i>
+                    Logout
+                </button>
+
+            </nav>
+
+        </aside>
+
+        <main class="main-content">
+
+            <div class="topbar">
+
+                <div>
+                    <h2>Community Feed</h2>
+                    <p>Explore blogs from creators.</p>
+                </div>
+
+                <div class="top-profile">
+                    <span id="topUsername"></span>
+                </div>
+
+            </div>
+
+            <div id="postsContainer" class="posts-container"></div>
+
+        </main>
+
+    </section>
+
+    <!-- PROFILE -->
+    <section class="profile-page hidden" id="profilePage">
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>VibeBlog</h2>
+            </div>
+
+            <nav>
+
+                <button class="nav-btn" id="homeBtn">
+                    <i data-feather="home"></i>
+                    Home
+                </button>
+
+                <button class="nav-btn" id="openPostModal2">
+                    <i data-feather="plus-square"></i>
+                    Create
+                </button>
+
+                <button class="nav-btn active">
+                    <i data-feather="user"></i>
+                    Profile
+                </button>
+
+                <button class="nav-btn logout-btn" id="logoutBtn2">
+                    <i data-feather="log-out"></i>
+                    Logout
+                </button>
+
+            </nav>
+
+        </aside>
+
+        <main class="profile-main">
+
+            <div class="profile-header">
+
+                <div class="profile-avatar-large" id="profileAvatar">
+                    H
+                </div>
+
+                <div class="profile-info">
+
+                    <div class="profile-top-row">
+                        <h2 id="profileUsername">username</h2>
+                    </div>
+
+                    <div class="profile-stats">
+
+                        <div>
+                            <strong id="postsCount">0</strong>
+                            <span>Posts</span>
+                        </div>
+
+                        <div>
+                            <strong>0</strong>
+                            <span>Followers</span>
+                        </div>
+
+                        <div>
+                            <strong>0</strong>
+                            <span>Following</span>
+                        </div>
+
+                    </div>
+
+                    <p class="profile-bio">
+                        ✨ Content Creator | Blogger | Dreamer
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="profile-posts-grid" id="profilePostsGrid"></div>
+
+        </main>
+
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal hidden" id="postModal">
+
+        <div class="modal-content">
+
+            <div class="modal-top">
+
+                <h2>Create Post</h2>
+
+                <button class="close-btn" id="closeModal">
+                    ✕
+                </button>
+
+            </div>
+
+            <form id="postForm">
+
+                <textarea id="postContent" placeholder="What's happening?"></textarea>
+
+                <input type="file" id="postMedia" accept="image/*,video/*">
+
+                <button class="main-btn" type="submit">
+                    Publish
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+
+    <script>
+        feather.replace();
+    </script>
+
+</body>
+
+</html>
